@@ -4,9 +4,9 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> activePlayers = FileHandler.loadPlayers("data/active.txt");
+        ArrayList<String> activePlayers = FileHandler.loadPlayers("active.txt");
         String[] injuredPlayers = new String[10];
-        int injuredCount = FileHandler.loadInjuredPlayers("data/injured.txt", injuredPlayers);
+        int injuredCount = FileHandler.loadInjuredPlayers("injured.txt", injuredPlayers);
 
         while (true) {
             System.out.println("\nSoccer Team Manager:");
@@ -61,8 +61,8 @@ public class Main {
                     break;
 
                 case "5":
-                    FileHandler.savePlayers(activePlayers, "data/active.txt");
-                    FileHandler.saveInjuredPlayers(injuredPlayers, injuredCount, "data/injured.txt");
+                    FileHandler.savePlayers(activePlayers, "active.txt");
+                    FileHandler.saveInjuredPlayers(injuredPlayers, injuredCount, "injured.txt");
                     System.out.println("Data saved. Exiting program.");
                     return;
 
